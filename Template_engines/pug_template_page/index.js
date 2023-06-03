@@ -3,11 +3,20 @@ const bodyParser=require("body-parser")
 const http=require("http")
 const app=express()
 const port =3000
-const routers=express.Router()
+const homeRoute=require("./routes/home")
+const productRoute=require("./routes/product")
 
 //setup the templating engine
-app.use("view engine","pug")
-app.use("views","views")
+app.set("view engine","pug")
+app.set("views","views")
+
+//using body parser
+app.use(bodyParser.urlencoded({extended:false}))
+
+
+//home route
+app.use(homeRoute)
+app.use(productRoute.router)
 
 //create a server
 const server=http.createServer(app)
