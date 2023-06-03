@@ -7,10 +7,11 @@ const app=express()
 app.set("view engine","pug");
 app.set("views","views");
 const homeRoutes=require("./routes/home")
+const productRoutes=require("./routes/product.js")
 const server =http.createServer(app)
 
-app.use(homeRoutes)
-
+app.use(homeRoutes);
+app.use(productRoutes);
 
 
 server.listen(port,()=>{
