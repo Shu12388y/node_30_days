@@ -11,8 +11,8 @@ router.get("/product",(req,res,next)=>{
 })
 
 router.post("/product-data",(req,res,next)=>{
-  data.push({title:req.body.title})
-//   console.log(data)
+  data.push(req.body)
+  console.log(data)
   res.redirect("/")
 })
 
