@@ -5,8 +5,6 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title Document
     body 
-        h1 Home Page
-        a(href="product") Product 
-
-    //- each produc in produs 
-    //-   h2 #{produc.title}  
+        form(action="/product_data" method="post")
+            input(type="text" name="title") 
+            button(type="submit") Click me
